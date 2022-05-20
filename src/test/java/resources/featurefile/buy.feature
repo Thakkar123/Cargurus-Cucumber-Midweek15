@@ -16,11 +16,11 @@ Feature: Search functionality
 
      | MAKE       | MODEL              | LOCATION        | PRICE   |
      | Audi       | A1                 | NSW - Sydney    | $50,000 |
-#     | Honda      | Civic              | NSW - All       | $20,000 |
-#     | BMW        | 1 Series           | SA - Adelaide   | $15,000 |
-#     | Nissan     | Qashqai            | VIC - Melbourne | $40,000 |
-#     | Jaguar     | F-Pace             | ACT - All       | $80,000 |
-#     | Land Rover | Range Rover Evoque | QLD - Brisbane  | $40,000 |
+     | Honda      | Civic              | NSW - All       | $20,000 |
+     | BMW        | 1 Series           | SA - Adelaide   | $15,000 |
+     | Nissan     | Qashqai            | VIC - Melbourne | $40,000 |
+     | Jaguar     | F-Pace             | ACT - All       | $80,000 |
+     | Land Rover | Range Rover Evoque | QLD - Brisbane  | $40,000 |
 
   Scenario Outline: Search the used car with model
     Given I am on homepage
