@@ -52,7 +52,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>May 20, 2022 03:59:01 PM</span>
+                    <span class='label suite-start-time blue darken-3'>May 20, 2022 08:08:20 PM</span>
 				</a>
 			</li>
 			<li>
@@ -79,6 +79,7 @@
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
 						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -144,10 +145,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='91.667%'><span class='strong'>11</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='83.333%'><span class='strong'>10</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='8.333%'>1</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='16.667%'>2</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -159,10 +160,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='99.167%'><span class='strong'>119</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='89.167%'><span class='strong'>107</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0.833%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='1.667%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='9.167%'>11</span> others
 				</div>
 			</div>
 		</div>
@@ -179,12 +180,12 @@
 				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Search functionality</span>
-						<span class='test-time'>May 20, 2022 03:59:01 PM</span>
+						<span class='test-time'>May 20, 2022 08:08:20 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenariooutline node' test-id='2' status='pass'>
-	<span class='duration right label'>0h 1m 38s+255ms</span>
+<div class='scenariooutline node' test-id='2' status='fail'>
+	<span class='duration right label'>0h 3m 36s+526ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
 		<span class="desc-text">Search the buy car with model</span>
@@ -337,7 +338,7 @@
 					</li>
 				</ul>
 		</li>
-		<li test-id='36' class='node scenario pass' status='pass'>
+		<li test-id='36' class='node scenario fail' status='fail'>
 			
 			<b>Scenario</b>
 			
@@ -364,25 +365,38 @@
 						<span class="bdd-step-name">And I select make "Nissan"</span>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='42' class='node and pass' status='pass'><b>And</b>
+					<li test-id='42' class='node and fail' status='fail'><b>And</b>
 						<span class="bdd-step-name">And I select model "Qashqai"</span>
-							<div class='pre'>passed</div>
+							<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate option with text: Qashqai
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-T82CTNL', ip: '192.168.1.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.carsguide.utility.Utility.selectByVisibleTextFromDropDown(Utility.java:152)
+	at com.carsguide.pages.NewAndUsedCarsSearchPage.selectModelFromDropdown(NewAndUsedCarsSearchPage.java:51)
+	at com.carsguide.steps.Buy.iSelectModel(Buy.java:45)
+	at ✽.And I select model "Qashqai"(buy.feature:9)
+</pre></div>
 					</li>
-					<li test-id='43' class='node and pass' status='pass'><b>And</b>
+					<li test-id='43' class='node and skip' status='skip'><b>And</b>
 						<span class="bdd-step-name">And I select location "VIC - Melbourne"</span>
-							<div class='pre'>passed</div>
+							<div class='pre'>skipped</div>
 					</li>
-					<li test-id='44' class='node and pass' status='pass'><b>And</b>
+					<li test-id='44' class='node and skip' status='skip'><b>And</b>
 						<span class="bdd-step-name">And I select price "$40,000"</span>
-							<div class='pre'>passed</div>
+							<div class='pre'>skipped</div>
 					</li>
-					<li test-id='45' class='node and pass' status='pass'><b>And</b>
+					<li test-id='45' class='node and skip' status='skip'><b>And</b>
 						<span class="bdd-step-name">And I click on 'Find My Next Car' tab</span>
-							<div class='pre'>passed</div>
+							<div class='pre'>skipped</div>
 					</li>
-					<li test-id='46' class='node then pass' status='pass'><b>Then</b>
+					<li test-id='46' class='node then skip' status='skip'><b>Then</b>
 						<span class="bdd-step-name">Then I should see the make "Nissan" in results</span>
-							<div class='pre'>passed</div>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="C:\Users\Ajit\IdeaProjects\Cargurus Cucumber Midweek15/src/main/java/com/carsguide/screenshots/Search_the_buy_car_with_model20220520081058.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>skipped</div>
 					</li>
 				</ul>
 		</li>
@@ -487,7 +501,7 @@
 	</ul>
 </div>
 <div class='scenariooutline node' test-id='69' status='fail'>
-	<span class='duration right label'>0h 2m 10s+828ms</span>
+	<span class='duration right label'>0h 2m 56s+134ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
 		<span class="desc-text">Search the used car with model</span>
@@ -606,47 +620,15 @@
 						<span class="bdd-step-name">When I mouse hover on 'buy+sell' tab</span>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='95' class='node when pass' status='pass'><b>When</b>
+					<li test-id='95' class='node when fail' status='fail'><b>When</b>
 						<span class="bdd-step-name">When I click ‘Used’ link</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='96' class='node then pass' status='pass'><b>Then</b>
-						<span class="bdd-step-name">Then I navigate to ‘Used Cars For Sale’ page</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='97' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And I select make "Volkswagen"</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='98' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And I select model "Polo"</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='99' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And I select location "SA - North"</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='100' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And I select price "$35,000"</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='101' class='node and pass' status='pass'><b>And</b>
-						<span class="bdd-step-name">And I click on 'Find My Next Car' tab</span>
-							<div class='pre'>passed</div>
-					</li>
-					<li test-id='102' class='node then fail' status='fail'><b>Then</b>
-						<span class="bdd-step-name">Then I should see the make "Volkswagen" in results</span>
-						<ul class='screenshots right'>
-							<li><a data-featherlight="image" href="C:\Users\Ajit\IdeaProjects\Cargurus Cucumber Midweek15/src/main/java/com/carsguide/screenshots/Search_the_used_car_with_model20220520040152.png"><i class='material-icons'>panorama</i></a></li>
-						</ul>
-							<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: //h1[@class='listing-search-title']
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+							<div class='pre'><pre>org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: (-4800, 302) is out of bounds of viewport width (1920) and height (947)
 Build info: version: '4.0.0', revision: '3a21814679'
 System info: host: 'DESKTOP-T82CTNL', ip: '192.168.1.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [419fae8c-2add-4c6c-ab96-0dfda18755de, findElement {using=xpath, value=//h1[@class='listing-search-title']}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 99.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220411174855, moz:debuggerAddress: localhost:61499, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 3228, moz:profile: C:\Users\Ajit\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:61499/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 419fae8c-2add-4c6c-ab96-0dfda18755de
+Command: [769967b4-b4ef-41b4-9f42-bf515bcf22b1, actions {actions=[org.openqa.selenium.interactions.Sequence@626e0c86]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 99.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220411174855, moz:debuggerAddress: localhost:49844, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 3192, moz:profile: C:\Users\Ajit\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:49844/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 769967b4-b4ef-41b4-9f42-bf515bcf22b1
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -658,18 +640,45 @@ Session ID: 419fae8c-2add-4c6c-ab96-0dfda18755de
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at com.sun.proxy.$Proxy22.getText(Unknown Source)
-	at com.carsguide.utility.Utility.getTextFromElement(Utility.java:63)
-	at com.carsguide.pages.SearchResultPage.verifyMakeInSearchResult(SearchResultPage.java:25)
-	at com.carsguide.steps.Buy.iShouldSeeTheMakeInResults(Buy.java:66)
-	at ✽.Then I should see the make "Volkswagen" in results(buy.feature:35)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:627)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:617)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:573)
+	at com.carsguide.utility.Utility.mouseHoverToElementAndClick(Utility.java:179)
+	at com.carsguide.pages.HomePage.clickOnUsedLink(HomePage.java:46)
+	at com.carsguide.steps.Buy.iClickUsedLink(Buy.java:71)
+	at ✽.When I click ‘Used’ link(buy.feature:28)
 </pre></div>
+					</li>
+					<li test-id='96' class='node then skip' status='skip'><b>Then</b>
+						<span class="bdd-step-name">Then I navigate to ‘Used Cars For Sale’ page</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='97' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And I select make "Volkswagen"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='98' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And I select model "Polo"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='99' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And I select location "SA - North"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='100' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And I select price "$35,000"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='101' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And I click on 'Find My Next Car' tab</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='102' class='node then skip' status='skip'><b>Then</b>
+						<span class="bdd-step-name">Then I should see the make "Volkswagen" in results</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="C:\Users\Ajit\IdeaProjects\Cargurus Cucumber Midweek15/src/main/java/com/carsguide/screenshots/Search_the_used_car_with_model20220520081323.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>skipped</div>
 					</li>
 				</ul>
 		</li>
@@ -892,16 +901,51 @@ Session ID: 419fae8c-2add-4c6c-ab96-0dfda18755de
                                         </thead>
                                         <tbody>
                                                     <tr>
-                                                        <td>May 20, 2022 04:01:32 PM</td>
-                                                        <td class='linked' test-id='102'>Search functionality.Search the used car with model.Search the used car with model.Then I should see the make "Volkswagen" in results</td>
-                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: //h1[@class='listing-search-title']
+                                                        <td>May 20, 2022 08:10:38 PM</td>
+                                                        <td class='linked' test-id='42'>Search functionality.Search the buy car with model.Search the buy car with model.And I select model "Qashqai"</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: Cannot locate option with text: Qashqai
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.0.0', revision: '3a21814679'
 System info: host: 'DESKTOP-T82CTNL', ip: '192.168.1.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.carsguide.utility.Utility.selectByVisibleTextFromDropDown(Utility.java:152)
+	at com.carsguide.pages.NewAndUsedCarsSearchPage.selectModelFromDropdown(NewAndUsedCarsSearchPage.java:51)
+	at com.carsguide.steps.Buy.iSelectModel(Buy.java:45)
+	at ✽.And I select model "Qashqai"(buy.feature:9)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>org.openqa.selenium.interactions.MoveTargetOutOfBoundsException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>May 20, 2022 08:13:22 PM</td>
+                                                        <td class='linked' test-id='95'>Search functionality.Search the used car with model.Search the used car with model.When I click ‘Used’ link</td>
+                                                        <td><pre><pre>org.openqa.selenium.interactions.MoveTargetOutOfBoundsException: (-4800, 302) is out of bounds of viewport width (1920) and height (947)
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-T82CTNL', ip: '192.168.1.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Command: [419fae8c-2add-4c6c-ab96-0dfda18755de, findElement {using=xpath, value=//h1[@class='listing-search-title']}]
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 99.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220411174855, moz:debuggerAddress: localhost:61499, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 3228, moz:profile: C:\Users\Ajit\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:61499/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 419fae8c-2add-4c6c-ab96-0dfda18755de
+Command: [769967b4-b4ef-41b4-9f42-bf515bcf22b1, actions {actions=[org.openqa.selenium.interactions.Sequence@626e0c86]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 99.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220411174855, moz:debuggerAddress: localhost:49844, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 3192, moz:profile: C:\Users\Ajit\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:49844/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 769967b4-b4ef-41b4-9f42-bf515bcf22b1
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -913,17 +957,13 @@ Session ID: 419fae8c-2add-4c6c-ab96-0dfda18755de
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at com.sun.proxy.$Proxy22.getText(Unknown Source)
-	at com.carsguide.utility.Utility.getTextFromElement(Utility.java:63)
-	at com.carsguide.pages.SearchResultPage.verifyMakeInSearchResult(SearchResultPage.java:25)
-	at com.carsguide.steps.Buy.iShouldSeeTheMakeInResults(Buy.java:66)
-	at ✽.Then I should see the make "Volkswagen" in results(buy.feature:35)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:627)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:617)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:573)
+	at com.carsguide.utility.Utility.mouseHoverToElementAndClick(Utility.java:179)
+	at com.carsguide.pages.HomePage.clickOnUsedLink(HomePage.java:46)
+	at com.carsguide.steps.Buy.iClickUsedLink(Buy.java:71)
+	at ✽.When I click ‘Used’ link(buy.feature:28)
 </pre></pre></td>
                                                     </tr>
                                         </tbody>
@@ -968,19 +1008,19 @@ Session ID: 419fae8c-2add-4c6c-ab96-0dfda18755de
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>May 20, 2022 03:59:01 PM</div>
+					<div class='panel-lead'>May 20, 2022 08:08:20 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>May 20, 2022 04:02:53 PM</div>
+			 		<div class='panel-lead'>May 20, 2022 08:15:00 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>231,837ms</div>
+					<div class='panel-lead'>399,956ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -1037,23 +1077,23 @@ Session ID: 419fae8c-2add-4c6c-ab96-0dfda18755de
 				skipParent: 0,
 				exceptionsParent: 1,
 				
-				passChild: 11,
-				failChild: 1,
+				passChild: 10,
+				failChild: 2,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 1,
+				exceptionsChild: 2,
 				
-				passGrandChild: 119,
-				failGrandChild: 1,
+				passGrandChild: 107,
+				failGrandChild: 2,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 0,
+				skipGrandChild: 11,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 1,
+				exceptionsGrandChild: 13,
 			};
 		</script>
 		
