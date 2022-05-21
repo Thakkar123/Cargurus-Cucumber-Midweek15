@@ -144,7 +144,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 10910741200,
+  "duration": 9592852100,
   "status": "passed"
 });
 formatter.scenario({
@@ -224,28 +224,28 @@ formatter.match({
   "location": "Buy.iAmOnHomepage()"
 });
 formatter.result({
-  "duration": 319124900,
+  "duration": 303391800,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iMouseHoverOnBuySellTab()"
 });
 formatter.result({
-  "duration": 337135700,
+  "duration": 656176900,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickSearchCarsLink()"
 });
 formatter.result({
-  "duration": 309732100,
+  "duration": 383357700,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iNavigateToNewAndUsedCarSearchPage()"
 });
 formatter.result({
-  "duration": 1029626300,
+  "duration": 581857100,
   "status": "passed"
 });
 formatter.match({
@@ -258,7 +258,7 @@ formatter.match({
   "location": "Buy.iSelectMake(String)"
 });
 formatter.result({
-  "duration": 831164200,
+  "duration": 280007000,
   "status": "passed"
 });
 formatter.match({
@@ -271,7 +271,7 @@ formatter.match({
   "location": "Buy.iSelectModel(String)"
 });
 formatter.result({
-  "duration": 524948200,
+  "duration": 234713000,
   "status": "passed"
 });
 formatter.match({
@@ -284,7 +284,7 @@ formatter.match({
   "location": "Buy.iSelectLocation(String)"
 });
 formatter.result({
-  "duration": 266772800,
+  "duration": 231111400,
   "status": "passed"
 });
 formatter.match({
@@ -297,14 +297,14 @@ formatter.match({
   "location": "Buy.iSelectPrice(String)"
 });
 formatter.result({
-  "duration": 531336400,
+  "duration": 233241700,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickOnFindMyNextCarTab()"
 });
 formatter.result({
-  "duration": 2959555900,
+  "duration": 4596068200,
   "status": "passed"
 });
 formatter.match({
@@ -317,15 +317,15 @@ formatter.match({
   "location": "Buy.iShouldSeeTheMakeInResults(String)"
 });
 formatter.result({
-  "duration": 112177600,
+  "duration": 81108800,
   "status": "passed"
 });
 formatter.after({
-  "duration": 1005677600,
+  "duration": 910989300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 8384616600,
+  "duration": 8140708800,
   "status": "passed"
 });
 formatter.scenario({
@@ -405,28 +405,28 @@ formatter.match({
   "location": "Buy.iAmOnHomepage()"
 });
 formatter.result({
-  "duration": 86900,
+  "duration": 67100,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iMouseHoverOnBuySellTab()"
 });
 formatter.result({
-  "duration": 281628400,
+  "duration": 319515300,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickSearchCarsLink()"
 });
 formatter.result({
-  "duration": 472309800,
+  "duration": 619945500,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iNavigateToNewAndUsedCarSearchPage()"
 });
 formatter.result({
-  "duration": 1009586000,
+  "duration": 741728600,
   "status": "passed"
 });
 formatter.match({
@@ -439,7 +439,7 @@ formatter.match({
   "location": "Buy.iSelectMake(String)"
 });
 formatter.result({
-  "duration": 653900800,
+  "duration": 256560500,
   "status": "passed"
 });
 formatter.match({
@@ -452,7 +452,7 @@ formatter.match({
   "location": "Buy.iSelectModel(String)"
 });
 formatter.result({
-  "duration": 827909600,
+  "duration": 1738355500,
   "status": "passed"
 });
 formatter.match({
@@ -465,7 +465,7 @@ formatter.match({
   "location": "Buy.iSelectLocation(String)"
 });
 formatter.result({
-  "duration": 292948900,
+  "duration": 345193700,
   "status": "passed"
 });
 formatter.match({
@@ -478,14 +478,14 @@ formatter.match({
   "location": "Buy.iSelectPrice(String)"
 });
 formatter.result({
-  "duration": 275375100,
+  "duration": 309922300,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickOnFindMyNextCarTab()"
 });
 formatter.result({
-  "duration": 3705167100,
+  "duration": 3195445200,
   "status": "passed"
 });
 formatter.match({
@@ -498,15 +498,15 @@ formatter.match({
   "location": "Buy.iShouldSeeTheMakeInResults(String)"
 });
 formatter.result({
-  "duration": 75226700,
+  "duration": 253213700,
   "status": "passed"
 });
 formatter.after({
-  "duration": 918863000,
+  "duration": 1105759200,
   "status": "passed"
 });
 formatter.before({
-  "duration": 7297749100,
+  "duration": 11997911400,
   "status": "passed"
 });
 formatter.scenario({
@@ -586,28 +586,28 @@ formatter.match({
   "location": "Buy.iAmOnHomepage()"
 });
 formatter.result({
-  "duration": 38000,
+  "duration": 44400,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iMouseHoverOnBuySellTab()"
 });
 formatter.result({
-  "duration": 255552000,
+  "duration": 297177100,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickSearchCarsLink()"
 });
 formatter.result({
-  "duration": 387391100,
+  "duration": 430489500,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iNavigateToNewAndUsedCarSearchPage()"
 });
 formatter.result({
-  "duration": 935262300,
+  "duration": 934487900,
   "status": "passed"
 });
 formatter.match({
@@ -620,7 +620,7 @@ formatter.match({
   "location": "Buy.iSelectMake(String)"
 });
 formatter.result({
-  "duration": 344872600,
+  "duration": 243931700,
   "status": "passed"
 });
 formatter.match({
@@ -633,7 +633,7 @@ formatter.match({
   "location": "Buy.iSelectModel(String)"
 });
 formatter.result({
-  "duration": 2206039600,
+  "duration": 1706042200,
   "status": "passed"
 });
 formatter.match({
@@ -646,7 +646,7 @@ formatter.match({
   "location": "Buy.iSelectLocation(String)"
 });
 formatter.result({
-  "duration": 383047800,
+  "duration": 419878600,
   "status": "passed"
 });
 formatter.match({
@@ -659,14 +659,14 @@ formatter.match({
   "location": "Buy.iSelectPrice(String)"
 });
 formatter.result({
-  "duration": 362942700,
+  "duration": 250708900,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickOnFindMyNextCarTab()"
 });
 formatter.result({
-  "duration": 2423790500,
+  "duration": 2596687000,
   "status": "passed"
 });
 formatter.match({
@@ -679,15 +679,15 @@ formatter.match({
   "location": "Buy.iShouldSeeTheMakeInResults(String)"
 });
 formatter.result({
-  "duration": 127150300,
+  "duration": 161305200,
   "status": "passed"
 });
 formatter.after({
-  "duration": 993062800,
+  "duration": 923544100,
   "status": "passed"
 });
 formatter.before({
-  "duration": 4877375700,
+  "duration": 8816562400,
   "status": "passed"
 });
 formatter.scenario({
@@ -767,28 +767,28 @@ formatter.match({
   "location": "Buy.iAmOnHomepage()"
 });
 formatter.result({
-  "duration": 45800,
+  "duration": 39200,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iMouseHoverOnBuySellTab()"
 });
 formatter.result({
-  "duration": 486474800,
+  "duration": 489666500,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickSearchCarsLink()"
 });
 formatter.result({
-  "duration": 485540100,
+  "duration": 616882600,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iNavigateToNewAndUsedCarSearchPage()"
 });
 formatter.result({
-  "duration": 432957300,
+  "duration": 1116041000,
   "status": "passed"
 });
 formatter.match({
@@ -801,7 +801,7 @@ formatter.match({
   "location": "Buy.iSelectMake(String)"
 });
 formatter.result({
-  "duration": 274293100,
+  "duration": 244140500,
   "status": "passed"
 });
 formatter.match({
@@ -814,7 +814,7 @@ formatter.match({
   "location": "Buy.iSelectModel(String)"
 });
 formatter.result({
-  "duration": 1928011100,
+  "duration": 1474699400,
   "status": "passed"
 });
 formatter.match({
@@ -827,7 +827,7 @@ formatter.match({
   "location": "Buy.iSelectLocation(String)"
 });
 formatter.result({
-  "duration": 332024200,
+  "duration": 552769700,
   "status": "passed"
 });
 formatter.match({
@@ -840,14 +840,14 @@ formatter.match({
   "location": "Buy.iSelectPrice(String)"
 });
 formatter.result({
-  "duration": 331588800,
+  "duration": 272222600,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickOnFindMyNextCarTab()"
 });
 formatter.result({
-  "duration": 3812283000,
+  "duration": 2677511100,
   "status": "passed"
 });
 formatter.match({
@@ -860,15 +860,15 @@ formatter.match({
   "location": "Buy.iShouldSeeTheMakeInResults(String)"
 });
 formatter.result({
-  "duration": 81398400,
+  "duration": 92479700,
   "status": "passed"
 });
 formatter.after({
-  "duration": 1076063800,
+  "duration": 1409994200,
   "status": "passed"
 });
 formatter.before({
-  "duration": 7363275800,
+  "duration": 10030092600,
   "status": "passed"
 });
 formatter.scenario({
@@ -948,28 +948,28 @@ formatter.match({
   "location": "Buy.iAmOnHomepage()"
 });
 formatter.result({
-  "duration": 32500,
+  "duration": 124300,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iMouseHoverOnBuySellTab()"
 });
 formatter.result({
-  "duration": 255979800,
+  "duration": 1050098500,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickSearchCarsLink()"
 });
 formatter.result({
-  "duration": 348512700,
+  "duration": 1004741600,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iNavigateToNewAndUsedCarSearchPage()"
 });
 formatter.result({
-  "duration": 602023600,
+  "duration": 729454200,
   "status": "passed"
 });
 formatter.match({
@@ -982,7 +982,7 @@ formatter.match({
   "location": "Buy.iSelectMake(String)"
 });
 formatter.result({
-  "duration": 322960100,
+  "duration": 441297500,
   "status": "passed"
 });
 formatter.match({
@@ -995,7 +995,7 @@ formatter.match({
   "location": "Buy.iSelectModel(String)"
 });
 formatter.result({
-  "duration": 1301729600,
+  "duration": 1819703800,
   "status": "passed"
 });
 formatter.match({
@@ -1008,7 +1008,7 @@ formatter.match({
   "location": "Buy.iSelectLocation(String)"
 });
 formatter.result({
-  "duration": 295391000,
+  "duration": 404921100,
   "status": "passed"
 });
 formatter.match({
@@ -1021,14 +1021,14 @@ formatter.match({
   "location": "Buy.iSelectPrice(String)"
 });
 formatter.result({
-  "duration": 357382300,
+  "duration": 265999500,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickOnFindMyNextCarTab()"
 });
 formatter.result({
-  "duration": 2897210600,
+  "duration": 3667349400,
   "status": "passed"
 });
 formatter.match({
@@ -1041,15 +1041,15 @@ formatter.match({
   "location": "Buy.iShouldSeeTheMakeInResults(String)"
 });
 formatter.result({
-  "duration": 124480800,
+  "duration": 76842300,
   "status": "passed"
 });
 formatter.after({
-  "duration": 906554900,
+  "duration": 870743800,
   "status": "passed"
 });
 formatter.before({
-  "duration": 8079236300,
+  "duration": 8080614300,
   "status": "passed"
 });
 formatter.scenario({
@@ -1129,28 +1129,28 @@ formatter.match({
   "location": "Buy.iAmOnHomepage()"
 });
 formatter.result({
-  "duration": 24700,
+  "duration": 34500,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iMouseHoverOnBuySellTab()"
 });
 formatter.result({
-  "duration": 201844000,
+  "duration": 824747600,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickSearchCarsLink()"
 });
 formatter.result({
-  "duration": 440544200,
+  "duration": 891060800,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iNavigateToNewAndUsedCarSearchPage()"
 });
 formatter.result({
-  "duration": 674723800,
+  "duration": 941603400,
   "status": "passed"
 });
 formatter.match({
@@ -1163,7 +1163,7 @@ formatter.match({
   "location": "Buy.iSelectMake(String)"
 });
 formatter.result({
-  "duration": 315640300,
+  "duration": 265011800,
   "status": "passed"
 });
 formatter.match({
@@ -1176,7 +1176,7 @@ formatter.match({
   "location": "Buy.iSelectModel(String)"
 });
 formatter.result({
-  "duration": 552139600,
+  "duration": 2216374400,
   "status": "passed"
 });
 formatter.match({
@@ -1189,7 +1189,7 @@ formatter.match({
   "location": "Buy.iSelectLocation(String)"
 });
 formatter.result({
-  "duration": 319848000,
+  "duration": 508608000,
   "status": "passed"
 });
 formatter.match({
@@ -1202,14 +1202,14 @@ formatter.match({
   "location": "Buy.iSelectPrice(String)"
 });
 formatter.result({
-  "duration": 314862900,
+  "duration": 248516100,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickOnFindMyNextCarTab()"
 });
 formatter.result({
-  "duration": 2772341400,
+  "duration": 2954852800,
   "status": "passed"
 });
 formatter.match({
@@ -1222,11 +1222,11 @@ formatter.match({
   "location": "Buy.iShouldSeeTheMakeInResults(String)"
 });
 formatter.result({
-  "duration": 83941600,
+  "duration": 368735300,
   "status": "passed"
 });
 formatter.after({
-  "duration": 1114129900,
+  "duration": 1110720500,
   "status": "passed"
 });
 formatter.scenarioOutline({
@@ -1367,7 +1367,7 @@ formatter.examples({
   "keyword": "Examples"
 });
 formatter.before({
-  "duration": 7619141500,
+  "duration": 8610767400,
   "status": "passed"
 });
 formatter.scenario({
@@ -1447,28 +1447,28 @@ formatter.match({
   "location": "Buy.iAmOnHomepage()"
 });
 formatter.result({
-  "duration": 71200,
+  "duration": 50500,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iMouseHoverOnBuySellTab()"
 });
 formatter.result({
-  "duration": 227927500,
+  "duration": 255657700,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickUsedLink()"
 });
 formatter.result({
-  "duration": 421008300,
+  "duration": 406770100,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iNavigateToUsedCarsForSalePage()"
 });
 formatter.result({
-  "duration": 484576700,
+  "duration": 843088900,
   "status": "passed"
 });
 formatter.match({
@@ -1481,7 +1481,7 @@ formatter.match({
   "location": "Buy.iSelectMake(String)"
 });
 formatter.result({
-  "duration": 320815300,
+  "duration": 298352500,
   "status": "passed"
 });
 formatter.match({
@@ -1494,7 +1494,7 @@ formatter.match({
   "location": "Buy.iSelectModel(String)"
 });
 formatter.result({
-  "duration": 551936100,
+  "duration": 668230600,
   "status": "passed"
 });
 formatter.match({
@@ -1507,7 +1507,7 @@ formatter.match({
   "location": "Buy.iSelectLocation(String)"
 });
 formatter.result({
-  "duration": 290103900,
+  "duration": 512668400,
   "status": "passed"
 });
 formatter.match({
@@ -1520,14 +1520,14 @@ formatter.match({
   "location": "Buy.iSelectPrice(String)"
 });
 formatter.result({
-  "duration": 445388600,
+  "duration": 561010700,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickOnFindMyNextCarTab()"
 });
 formatter.result({
-  "duration": 4435505300,
+  "duration": 5646228900,
   "status": "passed"
 });
 formatter.match({
@@ -1540,15 +1540,15 @@ formatter.match({
   "location": "Buy.iShouldSeeTheMakeInResults(String)"
 });
 formatter.result({
-  "duration": 84012400,
+  "duration": 242075800,
   "status": "passed"
 });
 formatter.after({
-  "duration": 918547900,
+  "duration": 1852521400,
   "status": "passed"
 });
 formatter.before({
-  "duration": 8262469700,
+  "duration": 12527654500,
   "status": "passed"
 });
 formatter.scenario({
@@ -1628,28 +1628,28 @@ formatter.match({
   "location": "Buy.iAmOnHomepage()"
 });
 formatter.result({
-  "duration": 33300,
+  "duration": 43700,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iMouseHoverOnBuySellTab()"
 });
 formatter.result({
-  "duration": 249131600,
+  "duration": 150599800,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickUsedLink()"
 });
 formatter.result({
-  "duration": 406351500,
+  "duration": 418914800,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iNavigateToUsedCarsForSalePage()"
 });
 formatter.result({
-  "duration": 946683500,
+  "duration": 1015674100,
   "status": "passed"
 });
 formatter.match({
@@ -1662,7 +1662,7 @@ formatter.match({
   "location": "Buy.iSelectMake(String)"
 });
 formatter.result({
-  "duration": 267685900,
+  "duration": 276810400,
   "status": "passed"
 });
 formatter.match({
@@ -1675,7 +1675,7 @@ formatter.match({
   "location": "Buy.iSelectModel(String)"
 });
 formatter.result({
-  "duration": 1211256400,
+  "duration": 2049048700,
   "status": "passed"
 });
 formatter.match({
@@ -1688,7 +1688,7 @@ formatter.match({
   "location": "Buy.iSelectLocation(String)"
 });
 formatter.result({
-  "duration": 323959400,
+  "duration": 281057600,
   "status": "passed"
 });
 formatter.match({
@@ -1701,14 +1701,14 @@ formatter.match({
   "location": "Buy.iSelectPrice(String)"
 });
 formatter.result({
-  "duration": 245640700,
+  "duration": 361697000,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickOnFindMyNextCarTab()"
 });
 formatter.result({
-  "duration": 2583128100,
+  "duration": 2982562300,
   "status": "passed"
 });
 formatter.match({
@@ -1721,15 +1721,15 @@ formatter.match({
   "location": "Buy.iShouldSeeTheMakeInResults(String)"
 });
 formatter.result({
-  "duration": 52812100,
+  "duration": 82272600,
   "status": "passed"
 });
 formatter.after({
-  "duration": 865440800,
+  "duration": 1249321100,
   "status": "passed"
 });
 formatter.before({
-  "duration": 8997015800,
+  "duration": 8879164700,
   "status": "passed"
 });
 formatter.scenario({
@@ -1809,28 +1809,28 @@ formatter.match({
   "location": "Buy.iAmOnHomepage()"
 });
 formatter.result({
-  "duration": 42500,
+  "duration": 37600,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iMouseHoverOnBuySellTab()"
 });
 formatter.result({
-  "duration": 229768400,
+  "duration": 227425900,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickUsedLink()"
 });
 formatter.result({
-  "duration": 314442000,
+  "duration": 408405500,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iNavigateToUsedCarsForSalePage()"
 });
 formatter.result({
-  "duration": 961197500,
+  "duration": 900238800,
   "status": "passed"
 });
 formatter.match({
@@ -1843,7 +1843,7 @@ formatter.match({
   "location": "Buy.iSelectMake(String)"
 });
 formatter.result({
-  "duration": 231190800,
+  "duration": 255387200,
   "status": "passed"
 });
 formatter.match({
@@ -1856,7 +1856,7 @@ formatter.match({
   "location": "Buy.iSelectModel(String)"
 });
 formatter.result({
-  "duration": 1531622400,
+  "duration": 1767506600,
   "status": "passed"
 });
 formatter.match({
@@ -1869,7 +1869,7 @@ formatter.match({
   "location": "Buy.iSelectLocation(String)"
 });
 formatter.result({
-  "duration": 52997700,
+  "duration": 102399000,
   "status": "passed"
 });
 formatter.match({
@@ -1882,14 +1882,14 @@ formatter.match({
   "location": "Buy.iSelectPrice(String)"
 });
 formatter.result({
-  "duration": 250088600,
+  "duration": 459413100,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickOnFindMyNextCarTab()"
 });
 formatter.result({
-  "duration": 4233907400,
+  "duration": 3941600000,
   "status": "passed"
 });
 formatter.match({
@@ -1902,15 +1902,15 @@ formatter.match({
   "location": "Buy.iShouldSeeTheMakeInResults(String)"
 });
 formatter.result({
-  "duration": 55050500,
+  "duration": 80636800,
   "status": "passed"
 });
 formatter.after({
-  "duration": 887444400,
+  "duration": 755886300,
   "status": "passed"
 });
 formatter.before({
-  "duration": 8148206000,
+  "duration": 10880084000,
   "status": "passed"
 });
 formatter.scenario({
@@ -1990,28 +1990,28 @@ formatter.match({
   "location": "Buy.iAmOnHomepage()"
 });
 formatter.result({
-  "duration": 38200,
+  "duration": 53100,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iMouseHoverOnBuySellTab()"
 });
 formatter.result({
-  "duration": 228760600,
+  "duration": 287721000,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickUsedLink()"
 });
 formatter.result({
-  "duration": 432060500,
+  "duration": 476886700,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iNavigateToUsedCarsForSalePage()"
 });
 formatter.result({
-  "duration": 586974200,
+  "duration": 904648200,
   "status": "passed"
 });
 formatter.match({
@@ -2024,7 +2024,7 @@ formatter.match({
   "location": "Buy.iSelectMake(String)"
 });
 formatter.result({
-  "duration": 579130000,
+  "duration": 1192958900,
   "status": "passed"
 });
 formatter.match({
@@ -2037,7 +2037,7 @@ formatter.match({
   "location": "Buy.iSelectModel(String)"
 });
 formatter.result({
-  "duration": 1267590600,
+  "duration": 1042401400,
   "status": "passed"
 });
 formatter.match({
@@ -2050,7 +2050,7 @@ formatter.match({
   "location": "Buy.iSelectLocation(String)"
 });
 formatter.result({
-  "duration": 579901200,
+  "duration": 242651800,
   "status": "passed"
 });
 formatter.match({
@@ -2063,14 +2063,14 @@ formatter.match({
   "location": "Buy.iSelectPrice(String)"
 });
 formatter.result({
-  "duration": 293044000,
+  "duration": 241891300,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickOnFindMyNextCarTab()"
 });
 formatter.result({
-  "duration": 2963690800,
+  "duration": 3390189100,
   "status": "passed"
 });
 formatter.match({
@@ -2083,15 +2083,15 @@ formatter.match({
   "location": "Buy.iShouldSeeTheMakeInResults(String)"
 });
 formatter.result({
-  "duration": 65399000,
+  "duration": 121785000,
   "status": "passed"
 });
 formatter.after({
-  "duration": 882385800,
+  "duration": 1252494900,
   "status": "passed"
 });
 formatter.before({
-  "duration": 5967832100,
+  "duration": 9715476300,
   "status": "passed"
 });
 formatter.scenario({
@@ -2171,28 +2171,28 @@ formatter.match({
   "location": "Buy.iAmOnHomepage()"
 });
 formatter.result({
-  "duration": 159500,
+  "duration": 30100,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iMouseHoverOnBuySellTab()"
 });
 formatter.result({
-  "duration": 223071500,
+  "duration": 304402600,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickUsedLink()"
 });
 formatter.result({
-  "duration": 712971600,
+  "duration": 427478800,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iNavigateToUsedCarsForSalePage()"
 });
 formatter.result({
-  "duration": 419323100,
+  "duration": 1266856500,
   "status": "passed"
 });
 formatter.match({
@@ -2205,7 +2205,7 @@ formatter.match({
   "location": "Buy.iSelectMake(String)"
 });
 formatter.result({
-  "duration": 306583500,
+  "duration": 247961900,
   "status": "passed"
 });
 formatter.match({
@@ -2218,7 +2218,7 @@ formatter.match({
   "location": "Buy.iSelectModel(String)"
 });
 formatter.result({
-  "duration": 1961861200,
+  "duration": 2162662600,
   "status": "passed"
 });
 formatter.match({
@@ -2231,7 +2231,7 @@ formatter.match({
   "location": "Buy.iSelectLocation(String)"
 });
 formatter.result({
-  "duration": 398346400,
+  "duration": 350841400,
   "status": "passed"
 });
 formatter.match({
@@ -2244,14 +2244,14 @@ formatter.match({
   "location": "Buy.iSelectPrice(String)"
 });
 formatter.result({
-  "duration": 352875100,
+  "duration": 286835500,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickOnFindMyNextCarTab()"
 });
 formatter.result({
-  "duration": 2769251800,
+  "duration": 2381399800,
   "status": "passed"
 });
 formatter.match({
@@ -2264,15 +2264,15 @@ formatter.match({
   "location": "Buy.iShouldSeeTheMakeInResults(String)"
 });
 formatter.result({
-  "duration": 54636000,
+  "duration": 60769100,
   "status": "passed"
 });
 formatter.after({
-  "duration": 835523200,
+  "duration": 937201900,
   "status": "passed"
 });
 formatter.before({
-  "duration": 7386027500,
+  "duration": 9665006900,
   "status": "passed"
 });
 formatter.scenario({
@@ -2352,28 +2352,28 @@ formatter.match({
   "location": "Buy.iAmOnHomepage()"
 });
 formatter.result({
-  "duration": 131500,
+  "duration": 53600,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iMouseHoverOnBuySellTab()"
 });
 formatter.result({
-  "duration": 272466600,
+  "duration": 628669100,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickUsedLink()"
 });
 formatter.result({
-  "duration": 489589200,
+  "duration": 711466100,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iNavigateToUsedCarsForSalePage()"
 });
 formatter.result({
-  "duration": 768191600,
+  "duration": 705768800,
   "status": "passed"
 });
 formatter.match({
@@ -2386,7 +2386,7 @@ formatter.match({
   "location": "Buy.iSelectMake(String)"
 });
 formatter.result({
-  "duration": 300240100,
+  "duration": 283639500,
   "status": "passed"
 });
 formatter.match({
@@ -2399,7 +2399,7 @@ formatter.match({
   "location": "Buy.iSelectModel(String)"
 });
 formatter.result({
-  "duration": 1372798100,
+  "duration": 2250705000,
   "status": "passed"
 });
 formatter.match({
@@ -2412,7 +2412,7 @@ formatter.match({
   "location": "Buy.iSelectLocation(String)"
 });
 formatter.result({
-  "duration": 540077600,
+  "duration": 309284900,
   "status": "passed"
 });
 formatter.match({
@@ -2425,14 +2425,14 @@ formatter.match({
   "location": "Buy.iSelectPrice(String)"
 });
 formatter.result({
-  "duration": 258909900,
+  "duration": 340288500,
   "status": "passed"
 });
 formatter.match({
   "location": "Buy.iClickOnFindMyNextCarTab()"
 });
 formatter.result({
-  "duration": 3065773400,
+  "duration": 5190472700,
   "status": "passed"
 });
 formatter.match({
@@ -2445,11 +2445,11 @@ formatter.match({
   "location": "Buy.iShouldSeeTheMakeInResults(String)"
 });
 formatter.result({
-  "duration": 62485100,
+  "duration": 61611700,
   "status": "passed"
 });
 formatter.after({
-  "duration": 888627900,
+  "duration": 889410600,
   "status": "passed"
 });
 });

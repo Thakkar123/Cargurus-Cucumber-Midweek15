@@ -22,7 +22,7 @@ public String baseUrl = PropertyReader.getInstance().getProperty("baseUrl");
 public ManageDriver(){
 
     PageFactory.initElements(driver,this);
-    PropertyConfigurator.configure(System.getProperty("user.dir") + "src/test/java/resources/propertiesfile/log4j2.properties");
+    PropertyConfigurator.configure(System.getProperty("user.dir") + "/src/test/java/resources/propertiesfile/log4j2.properties");
 }
 
     public void selectBrowser(String browser) {
