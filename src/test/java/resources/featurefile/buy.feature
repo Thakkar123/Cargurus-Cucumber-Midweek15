@@ -34,10 +34,10 @@ Feature: Search functionality
     And   I click on 'Find My Next Car' tab
     Then  I should see the make "<MAKE>" in results
     Examples:
-      | MAKE       | MODEL              | LOCATION          | PRICE   |
-      | Ford       | Focus              | NSW - New England | $50,000 |
-      | BMW        | 4 Series           | NSW - Hunter      | $80,000 |
-      | Volkswagen | Polo               | SA - North        | $35,000 |
-      | Nissan     | Qashqai            | VIC - Melbourne   | $40,000 |
+      | MAKE       | MODEL              | LOCATION          | PRICE    |
+      | Ford       | Focus              | NSW - New England | $50,000  |
+      | BMW        | 4 Series           | NSW - Hunter      | $80,000  |
+      | Volkswagen | Polo               | Any Location      | $35,000  |
+      | Nissan     | Qashqai            | VIC - Melbourne   | $40,000  |
       | Jaguar     | F-Pace             | WA - Perth        | $100,000 |
-      | Land Rover | Range Rover Evoque | QLD - Brisbane    | $70,000 |
+      | Land Rover | Range Rover Evoque | QLD - Brisbane    | $70,000  |
