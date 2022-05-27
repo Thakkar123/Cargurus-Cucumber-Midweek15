@@ -1,5 +1,6 @@
 Feature: Search functionality
 
+  @Smoke
   Scenario Outline: Search the buy car with model
     Given I am on homepage
     When I mouse hover on 'buy+sell' tab
@@ -22,6 +23,7 @@ Feature: Search functionality
      | Jaguar     | F-Pace             | ACT - All       | $80,000 |
      | Land Rover | Range Rover Evoque | QLD - Brisbane  | $40,000 |
 
+  @Sanity
   Scenario Outline: Search the used car with model
     Given I am on homepage
     When I mouse hover on 'buy+sell' tab

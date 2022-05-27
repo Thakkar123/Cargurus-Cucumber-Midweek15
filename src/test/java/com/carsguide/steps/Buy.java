@@ -36,23 +36,23 @@ public class Buy {
     }
 
     @And("^I select make \"([^\"]*)\"$")
-    public void iSelectMake(String make)  {
-       new NewAndUsedCarsSearchPage().selectCarMakeFromdropdown(make);
+    public void iSelectMake(String make) {
+        new NewAndUsedCarsSearchPage().selectCarMakeFromdropdown(make);
     }
 
     @And("^I select model \"([^\"]*)\"$")
-    public void iSelectModel(String model)  {
+    public void iSelectModel(String model) {
         new NewAndUsedCarsSearchPage().selectModelFromDropdown(model);
     }
 
 
     @And("^I select location \"([^\"]*)\"$")
-    public void iSelectLocation(String location)  {
+    public void iSelectLocation(String location) {
         new NewAndUsedCarsSearchPage().selectLocationFromDropdown(location);
     }
 
     @And("^I select price \"([^\"]*)\"$")
-    public void iSelectPrice(String price)  {
+    public void iSelectPrice(String price) {
         new NewAndUsedCarsSearchPage().selectMaxPriceFromDropdown(price);
     }
 
@@ -62,7 +62,7 @@ public class Buy {
     }
 
     @Then("^I should see the make \"([^\"]*)\" in results$")
-    public void iShouldSeeTheMakeInResults(String make)  {
+    public void iShouldSeeTheMakeInResults(String make) {
         new SearchResultPage().verifyMakeInSearchResult(make);
     }
 
@@ -75,4 +75,5 @@ public class Buy {
     public void iNavigateToUsedCarsForSalePage() {
         new UsedCarsPage().VerifyPageTitle("Used Cars");
     }
+
 }

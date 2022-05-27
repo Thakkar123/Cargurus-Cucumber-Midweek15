@@ -38,7 +38,9 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
-						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
 		<!-- report name -->
@@ -51,7 +53,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>May 21, 2022 08:43:17 AM</span>
+                    <span class='label suite-start-time blue darken-3'>May 27, 2022 08:15:30 AM</span>
 				</a>
 			</li>
 			<li>
@@ -77,6 +79,8 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -84,6 +88,18 @@
 			<!-- test toggle -->
 
 			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@Smoke</a></li>
+					<li><a href='#'>@Sanity</a></li>
+					<li><a href='#'>@Regression</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
 			<!-- category toggle -->
 
 			<!-- clear filters -->
@@ -127,10 +143,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> feature(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> feature(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>2</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -142,10 +158,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>12</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='61.111%'><span class='strong'>11</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='38.889%'>7</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -157,10 +173,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>120</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='86%'><span class='strong'>129</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='4.667%'>7</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='9.333%'>14</span> others
 				</div>
 			</div>
 		</div>
@@ -174,21 +190,24 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Search functionality</span>
-						<span class='test-time'>May 21, 2022 08:43:17 AM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>May 27, 2022 08:15:30 AM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenariooutline node' test-id='2' status='pass'>
-	<span class='duration right label'>0h 1m 50s+796ms</span>
+<div class='scenariooutline node' test-id='2' status='fail'>
+	<span class='duration right label'>0h 1m 54s+112ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
 		<span class="desc-text">Search the buy car with model</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='3' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Smoke</span>
+			</div>
 			
 			<b>Scenario</b>
 			
@@ -237,7 +256,10 @@
 					</li>
 				</ul>
 		</li>
-		<li test-id='14' class='node scenario pass' status='pass'>
+		<li test-id='14' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Smoke</span>
+			</div>
 			
 			<b>Scenario</b>
 			
@@ -248,45 +270,293 @@
 						<span class="bdd-step-name">Given I am on homepage</span>
 							<div class='pre'>passed</div>
 					</li>
-					<li test-id='16' class='node when pass' status='pass'><b>When</b>
+					<li test-id='16' class='node when fail' status='fail'><b>When</b>
 						<span class="bdd-step-name">When I mouse hover on 'buy+sell' tab</span>
-							<div class='pre'>passed</div>
+							<div class='pre'><pre>org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-T82CTNL', ip: '192.168.1.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [9c9eeb8e-d4bf-4e7b-adbb-ecc8fe9b7b8a, actions {actions=[org.openqa.selenium.interactions.Sequence@41ffaeb8]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 100.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220519220738, moz:debuggerAddress: localhost:59846, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 36460, moz:profile: C:\Users\Ajit\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:59846/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 9c9eeb8e-d4bf-4e7b-adbb-ecc8fe9b7b8a
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:362)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:154)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:287)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:169)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:418)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:169)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:287)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:182)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:66)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:177)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:287)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:278)
+	at org.openqa.selenium.json.Json.toJson(Json.java:42)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:259)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:172)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:627)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:617)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:573)
+	at com.carsguide.utility.Utility.mouseHoverToElement(Utility.java:194)
+	at com.carsguide.pages.HomePage.mouseHoverOnBuySellTab(HomePage.java:36)
+	at com.carsguide.steps.Buy.iMouseHoverOnBuySellTab(Buy.java:20)
+	at ✽.When I mouse hover on 'buy+sell' tab(buy.feature:6)
+	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-T82CTNL', ip: '192.168.1.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: driver.version: RemoteWebDriver
+		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:303)
+		at org.openqa.selenium.json.Json.toJson(Json.java:40)
+		at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:259)
+		at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+		at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:172)
+		at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+		at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+		at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+		at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:627)
+		at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:617)
+		at org.openqa.selenium.interactions.Actions.perform(Actions.java:573)
+		at com.carsguide.utility.Utility.mouseHoverToElement(Utility.java:194)
+		at com.carsguide.pages.HomePage.mouseHoverOnBuySellTab(HomePage.java:36)
+		at com.carsguide.steps.Buy.iMouseHoverOnBuySellTab(Buy.java:20)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at cucumber.runtime.Utils$1.call(Utils.java:40)
+		at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+		at cucumber.runtime.Utils.invoke(Utils.java:34)
+		at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)
+		at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+		at cucumber.runtime.Runtime.runStep(Runtime.java:300)
+		at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+		at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+		at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)
+		at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)
+		at org.junit.runners.Suite.runChild(Suite.java:127)
+		at org.junit.runners.Suite.runChild(Suite.java:26)
+		at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+		at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+		at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+		at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+		at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+		at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+		at cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)
+		at org.junit.runners.Suite.runChild(Suite.java:127)
+		at org.junit.runners.Suite.runChild(Suite.java:26)
+		at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+		at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+		at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+		at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+		at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+		at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+		at cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)
+		at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
+		at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
+		at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+		at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+		at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+		at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+		at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+		at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+		at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
+		at cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)
+		at cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)
+		at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+		at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+		at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+		at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+		at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+		at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+		at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+		at cucumber.api.junit.Cucumber.run(Cucumber.java:100)
+		at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+		at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+		at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+		at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+		at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+		at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+		at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:358)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:154)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:287)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:169)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:418)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:169)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:287)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:182)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:66)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:177)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:287)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:278)
+	at org.openqa.selenium.json.Json.toJson(Json.java:42)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:259)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:172)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:627)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:617)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:573)
+	at com.carsguide.utility.Utility.mouseHoverToElement(Utility.java:194)
+	at com.carsguide.pages.HomePage.mouseHoverOnBuySellTab(HomePage.java:36)
+	at com.carsguide.steps.Buy.iMouseHoverOnBuySellTab(Buy.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at cucumber.runtime.Utils$1.call(Utils.java:40)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:34)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:300)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)
+	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.api.junit.Cucumber.run(Cucumber.java:100)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-T82CTNL', ip: '192.168.1.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [9c9eeb8e-d4bf-4e7b-adbb-ecc8fe9b7b8a, findElement {using=xpath, value=//a[contains(text(),'buy + sell')]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 100.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220519220738, moz:debuggerAddress: localhost:59846, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 36460, moz:profile: C:\Users\Ajit\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:59846/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 9c9eeb8e-d4bf-4e7b-adbb-ecc8fe9b7b8a
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy22.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:201)
+	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:152)
+	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:73)
+	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:82)
+	... 96 more
+</pre></div>
 					</li>
-					<li test-id='17' class='node and pass' status='pass'><b>And</b>
+					<li test-id='17' class='node and skip' status='skip'><b>And</b>
 						<span class="bdd-step-name">And I click ‘Search Cars’ link</span>
-							<div class='pre'>passed</div>
+							<div class='pre'>skipped</div>
 					</li>
-					<li test-id='18' class='node then pass' status='pass'><b>Then</b>
+					<li test-id='18' class='node then skip' status='skip'><b>Then</b>
 						<span class="bdd-step-name">Then I navigate to ‘new and used car search’ page</span>
-							<div class='pre'>passed</div>
+							<div class='pre'>skipped</div>
 					</li>
-					<li test-id='19' class='node and pass' status='pass'><b>And</b>
+					<li test-id='19' class='node and skip' status='skip'><b>And</b>
 						<span class="bdd-step-name">And I select make "Honda"</span>
-							<div class='pre'>passed</div>
+							<div class='pre'>skipped</div>
 					</li>
-					<li test-id='20' class='node and pass' status='pass'><b>And</b>
+					<li test-id='20' class='node and skip' status='skip'><b>And</b>
 						<span class="bdd-step-name">And I select model "Civic"</span>
-							<div class='pre'>passed</div>
+							<div class='pre'>skipped</div>
 					</li>
-					<li test-id='21' class='node and pass' status='pass'><b>And</b>
+					<li test-id='21' class='node and skip' status='skip'><b>And</b>
 						<span class="bdd-step-name">And I select location "NSW - All"</span>
-							<div class='pre'>passed</div>
+							<div class='pre'>skipped</div>
 					</li>
-					<li test-id='22' class='node and pass' status='pass'><b>And</b>
+					<li test-id='22' class='node and skip' status='skip'><b>And</b>
 						<span class="bdd-step-name">And I select price "$20,000"</span>
-							<div class='pre'>passed</div>
+							<div class='pre'>skipped</div>
 					</li>
-					<li test-id='23' class='node and pass' status='pass'><b>And</b>
+					<li test-id='23' class='node and skip' status='skip'><b>And</b>
 						<span class="bdd-step-name">And I click on 'Find My Next Car' tab</span>
-							<div class='pre'>passed</div>
+							<div class='pre'>skipped</div>
 					</li>
-					<li test-id='24' class='node then pass' status='pass'><b>Then</b>
+					<li test-id='24' class='node then skip' status='skip'><b>Then</b>
 						<span class="bdd-step-name">Then I should see the make "Honda" in results</span>
-							<div class='pre'>passed</div>
+							<div class='pre'>skipped</div>
 					</li>
 				</ul>
 		</li>
 		<li test-id='25' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Smoke</span>
+			</div>
 			
 			<b>Scenario</b>
 			
@@ -336,6 +606,9 @@
 				</ul>
 		</li>
 		<li test-id='36' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Smoke</span>
+			</div>
 			
 			<b>Scenario</b>
 			
@@ -385,6 +658,9 @@
 				</ul>
 		</li>
 		<li test-id='47' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Smoke</span>
+			</div>
 			
 			<b>Scenario</b>
 			
@@ -434,6 +710,9 @@
 				</ul>
 		</li>
 		<li test-id='58' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Smoke</span>
+			</div>
 			
 			<b>Scenario</b>
 			
@@ -485,13 +764,16 @@
 	</ul>
 </div>
 <div class='scenariooutline node' test-id='69' status='pass'>
-	<span class='duration right label'>0h 1m 57s+495ms</span>
+	<span class='duration right label'>0h 2m 7s+333ms</span>
 	<div class='desc'>
 		<b>ScenarioOutline</b>
 		<span class="desc-text">Search the used car with model</span>
 	</div>
 	<ul class='steps'>
 		<li test-id='70' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Sanity</span>
+			</div>
 			
 			<b>Scenario</b>
 			
@@ -541,6 +823,9 @@
 				</ul>
 		</li>
 		<li test-id='81' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Sanity</span>
+			</div>
 			
 			<b>Scenario</b>
 			
@@ -590,6 +875,9 @@
 				</ul>
 		</li>
 		<li test-id='92' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Sanity</span>
+			</div>
 			
 			<b>Scenario</b>
 			
@@ -639,6 +927,9 @@
 				</ul>
 		</li>
 		<li test-id='103' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Sanity</span>
+			</div>
 			
 			<b>Scenario</b>
 			
@@ -688,6 +979,9 @@
 				</ul>
 		</li>
 		<li test-id='114' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Sanity</span>
+			</div>
 			
 			<b>Scenario</b>
 			
@@ -737,6 +1031,9 @@
 				</ul>
 		</li>
 		<li test-id='125' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Sanity</span>
+			</div>
 			
 			<b>Scenario</b>
 			
@@ -789,6 +1086,284 @@
 </div>
 					</div>
 				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='136'>
+					<div class='test-heading'>
+						<span class='test-name'>Find the dealers and verify</span>
+						<span class='test-time'>May 27, 2022 08:19:34 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='137' status='fail'>
+	<span class='duration right label'>0h 1m 14s+846ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Find the dealers and verify the dealers are in the list</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='138' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Regression</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Find the dealers and verify the dealers are in the list</span>
+			
+				<ul class='steps'>
+					<li test-id='139' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I am on homepage</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='140' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I mouse hover on 'buy+sell' tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='141' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I click on 'Find a Dealer' link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='142' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then I navigate to "https://www.carsguide.com.au/car-dealers" url page</span>
+							<div class='pre'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.carsguide.pages.FindDealersResultPage.verifyCarDealersPage(FindDealersResultPage.java:62)
+	at com.carsguide.steps.FindDealers.iNavigateToUrlPage(FindDealers.java:21)
+	at ✽.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page(finddealers.feature:8)
+</pre></div>
+					</li>
+					<li test-id='143' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And I should see the dealers names "3 Point Motors Epping" are display on page</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="C:\Users\Ajit\IdeaProjects\Cargurus Cucumber Midweek15/src/main/java/com/carsguide/screenshots/Find_the_dealers_and_verify_the_dealers_are_in_the_list20220527081945.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>skipped</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='144' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Regression</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Find the dealers and verify the dealers are in the list</span>
+			
+				<ul class='steps'>
+					<li test-id='145' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I am on homepage</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='146' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I mouse hover on 'buy+sell' tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='147' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I click on 'Find a Dealer' link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='148' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then I navigate to "https://www.carsguide.com.au/car-dealers" url page</span>
+							<div class='pre'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.carsguide.pages.FindDealersResultPage.verifyCarDealersPage(FindDealersResultPage.java:62)
+	at com.carsguide.steps.FindDealers.iNavigateToUrlPage(FindDealers.java:21)
+	at ✽.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page(finddealers.feature:8)
+</pre></div>
+					</li>
+					<li test-id='149' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And I should see the dealers names "4WDD Spec" are display on page</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="C:\Users\Ajit\IdeaProjects\Cargurus Cucumber Midweek15/src/main/java/com/carsguide/screenshots/Find_the_dealers_and_verify_the_dealers_are_in_the_list20220527081957.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>skipped</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='150' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Regression</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Find the dealers and verify the dealers are in the list</span>
+			
+				<ul class='steps'>
+					<li test-id='151' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I am on homepage</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='152' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I mouse hover on 'buy+sell' tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='153' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I click on 'Find a Dealer' link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='154' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then I navigate to "https://www.carsguide.com.au/car-dealers" url page</span>
+							<div class='pre'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.carsguide.pages.FindDealersResultPage.verifyCarDealersPage(FindDealersResultPage.java:62)
+	at com.carsguide.steps.FindDealers.iNavigateToUrlPage(FindDealers.java:21)
+	at ✽.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page(finddealers.feature:8)
+</pre></div>
+					</li>
+					<li test-id='155' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And I should see the dealers names "5 Star Auto" are display on page</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="C:\Users\Ajit\IdeaProjects\Cargurus Cucumber Midweek15/src/main/java/com/carsguide/screenshots/Find_the_dealers_and_verify_the_dealers_are_in_the_list20220527082008.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>skipped</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='156' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Regression</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Find the dealers and verify the dealers are in the list</span>
+			
+				<ul class='steps'>
+					<li test-id='157' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I am on homepage</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='158' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I mouse hover on 'buy+sell' tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='159' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I click on 'Find a Dealer' link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='160' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then I navigate to "https://www.carsguide.com.au/car-dealers" url page</span>
+							<div class='pre'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.carsguide.pages.FindDealersResultPage.verifyCarDealersPage(FindDealersResultPage.java:62)
+	at com.carsguide.steps.FindDealers.iNavigateToUrlPage(FindDealers.java:21)
+	at ✽.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page(finddealers.feature:8)
+</pre></div>
+					</li>
+					<li test-id='161' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And I should see the dealers names "A & M Car Sales Pty Ltd" are display on page</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="C:\Users\Ajit\IdeaProjects\Cargurus Cucumber Midweek15/src/main/java/com/carsguide/screenshots/Find_the_dealers_and_verify_the_dealers_are_in_the_list20220527082023.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>skipped</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='162' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Regression</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Find the dealers and verify the dealers are in the list</span>
+			
+				<ul class='steps'>
+					<li test-id='163' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I am on homepage</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='164' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I mouse hover on 'buy+sell' tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='165' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I click on 'Find a Dealer' link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='166' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then I navigate to "https://www.carsguide.com.au/car-dealers" url page</span>
+							<div class='pre'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.carsguide.pages.FindDealersResultPage.verifyCarDealersPage(FindDealersResultPage.java:62)
+	at com.carsguide.steps.FindDealers.iNavigateToUrlPage(FindDealers.java:21)
+	at ✽.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page(finddealers.feature:8)
+</pre></div>
+					</li>
+					<li test-id='167' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And I should see the dealers names "A1 MOTORS COMPANY" are display on page</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="C:\Users\Ajit\IdeaProjects\Cargurus Cucumber Midweek15/src/main/java/com/carsguide/screenshots/Find_the_dealers_and_verify_the_dealers_are_in_the_list20220527082036.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>skipped</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='168' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Regression</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Find the dealers and verify the dealers are in the list</span>
+			
+				<ul class='steps'>
+					<li test-id='169' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I am on homepage</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='170' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I mouse hover on 'buy+sell' tab</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='171' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I click on 'Find a Dealer' link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='172' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then I navigate to "https://www.carsguide.com.au/car-dealers" url page</span>
+							<div class='pre'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.carsguide.pages.FindDealersResultPage.verifyCarDealersPage(FindDealersResultPage.java:62)
+	at com.carsguide.steps.FindDealers.iNavigateToUrlPage(FindDealers.java:21)
+	at ✽.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page(finddealers.feature:8)
+</pre></div>
+					</li>
+					<li test-id='173' class='node and skip' status='skip'><b>And</b>
+						<span class="bdd-step-name">And I should see the dealers names "ANDREA MOTOR SERVICE" are display on page</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="C:\Users\Ajit\IdeaProjects\Cargurus Cucumber Midweek15/src/main/java/com/carsguide/screenshots/Find_the_dealers_and_verify_the_dealers_are_in_the_list20220527082049.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>skipped</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -814,7 +1389,626 @@
 
 </div>
 <!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Smoke</span>
+						<span class='category-status right'>
+							<span class='label pass'>5</span>
+							<span class='label fail'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 5</span>
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>May 27, 2022 08:15:30 AM</td>
+										<td class='linked' test-id='3'>Search functionality.Search the buy car with model.Search the buy car with model</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:15:54 AM</td>
+										<td class='linked' test-id='14'>Search functionality.Search the buy car with model.Search the buy car with model</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:16:03 AM</td>
+										<td class='linked' test-id='25'>Search functionality.Search the buy car with model.Search the buy car with model</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:16:21 AM</td>
+										<td class='linked' test-id='36'>Search functionality.Search the buy car with model.Search the buy car with model</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:16:44 AM</td>
+										<td class='linked' test-id='47'>Search functionality.Search the buy car with model.Search the buy car with model</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:17:03 AM</td>
+										<td class='linked' test-id='58'>Search functionality.Search the buy car with model.Search the buy car with model</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Sanity</span>
+						<span class='category-status right'>
+							<span class='label pass'>6</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 6</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>May 27, 2022 08:17:26 AM</td>
+										<td class='linked' test-id='70'>Search functionality.Search the used car with model.Search the used car with model</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:17:43 AM</td>
+										<td class='linked' test-id='81'>Search functionality.Search the used car with model.Search the used car with model</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:18:05 AM</td>
+										<td class='linked' test-id='92'>Search functionality.Search the used car with model.Search the used car with model</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:18:27 AM</td>
+										<td class='linked' test-id='103'>Search functionality.Search the used car with model.Search the used car with model</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:18:51 AM</td>
+										<td class='linked' test-id='114'>Search functionality.Search the used car with model.Search the used car with model</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:19:14 AM</td>
+										<td class='linked' test-id='125'>Search functionality.Search the used car with model.Search the used car with model</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Regression</span>
+						<span class='category-status right'>
+							<span class='label fail'>6</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							
+							<span class='label red lighten-1 white-text'>Failed: 6</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>May 27, 2022 08:19:34 AM</td>
+										<td class='linked' test-id='138'>Find the dealers and verify.Find the dealers and verify the dealers are in the list.Find the dealers and verify the dealers are in the list</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:19:47 AM</td>
+										<td class='linked' test-id='144'>Find the dealers and verify.Find the dealers and verify the dealers are in the list.Find the dealers and verify the dealers are in the list</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:19:58 AM</td>
+										<td class='linked' test-id='150'>Find the dealers and verify.Find the dealers and verify the dealers are in the list.Find the dealers and verify the dealers are in the list</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:20:10 AM</td>
+										<td class='linked' test-id='156'>Find the dealers and verify.Find the dealers and verify the dealers are in the list.Find the dealers and verify the dealers are in the list</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:20:24 AM</td>
+										<td class='linked' test-id='162'>Find the dealers and verify.Find the dealers and verify the dealers are in the list.Find the dealers and verify the dealers are in the list</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>May 27, 2022 08:20:37 AM</td>
+										<td class='linked' test-id='168'>Find the dealers and verify.Find the dealers and verify the dealers are in the list.Find the dealers and verify the dealers are in the list</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
 <!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>org.openqa.selenium.json.JsonException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>May 27, 2022 08:16:02 AM</td>
+                                                        <td class='linked' test-id='16'>Search functionality.Search the buy car with model.Search the buy car with model.When I mouse hover on 'buy+sell' tab</td>
+                                                        <td><pre><pre>org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-T82CTNL', ip: '192.168.1.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [9c9eeb8e-d4bf-4e7b-adbb-ecc8fe9b7b8a, actions {actions=[org.openqa.selenium.interactions.Sequence@41ffaeb8]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 100.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220519220738, moz:debuggerAddress: localhost:59846, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 36460, moz:profile: C:\Users\Ajit\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:59846/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 9c9eeb8e-d4bf-4e7b-adbb-ecc8fe9b7b8a
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:362)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:154)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:287)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:169)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:418)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:169)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:287)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:182)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:66)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:177)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:287)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:278)
+	at org.openqa.selenium.json.Json.toJson(Json.java:42)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:259)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:172)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:627)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:617)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:573)
+	at com.carsguide.utility.Utility.mouseHoverToElement(Utility.java:194)
+	at com.carsguide.pages.HomePage.mouseHoverOnBuySellTab(HomePage.java:36)
+	at com.carsguide.steps.Buy.iMouseHoverOnBuySellTab(Buy.java:20)
+	at ✽.When I mouse hover on 'buy+sell' tab(buy.feature:6)
+	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-T82CTNL', ip: '192.168.1.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: driver.version: RemoteWebDriver
+		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:303)
+		at org.openqa.selenium.json.Json.toJson(Json.java:40)
+		at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:259)
+		at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+		at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:172)
+		at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+		at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+		at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+		at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:627)
+		at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:617)
+		at org.openqa.selenium.interactions.Actions.perform(Actions.java:573)
+		at com.carsguide.utility.Utility.mouseHoverToElement(Utility.java:194)
+		at com.carsguide.pages.HomePage.mouseHoverOnBuySellTab(HomePage.java:36)
+		at com.carsguide.steps.Buy.iMouseHoverOnBuySellTab(Buy.java:20)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at cucumber.runtime.Utils$1.call(Utils.java:40)
+		at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+		at cucumber.runtime.Utils.invoke(Utils.java:34)
+		at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)
+		at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+		at cucumber.runtime.Runtime.runStep(Runtime.java:300)
+		at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+		at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+		at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)
+		at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)
+		at org.junit.runners.Suite.runChild(Suite.java:127)
+		at org.junit.runners.Suite.runChild(Suite.java:26)
+		at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+		at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+		at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+		at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+		at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+		at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+		at cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)
+		at org.junit.runners.Suite.runChild(Suite.java:127)
+		at org.junit.runners.Suite.runChild(Suite.java:26)
+		at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+		at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+		at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+		at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+		at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+		at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+		at cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)
+		at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
+		at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
+		at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+		at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+		at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+		at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+		at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+		at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+		at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
+		at cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)
+		at cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)
+		at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+		at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+		at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+		at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+		at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+		at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+		at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+		at cucumber.api.junit.Cucumber.run(Cucumber.java:100)
+		at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+		at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+		at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+		at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+		at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+		at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+		at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:358)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:154)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:287)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:169)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.Iterator.forEachRemaining(Iterator.java:116)
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801)
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)
+	at java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:418)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:169)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:287)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:182)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:66)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:177)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:287)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:278)
+	at org.openqa.selenium.json.Json.toJson(Json.java:42)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:259)
+	at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:127)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:172)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:627)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:617)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:573)
+	at com.carsguide.utility.Utility.mouseHoverToElement(Utility.java:194)
+	at com.carsguide.pages.HomePage.mouseHoverOnBuySellTab(HomePage.java:36)
+	at com.carsguide.steps.Buy.iMouseHoverOnBuySellTab(Buy.java:20)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at cucumber.runtime.Utils$1.call(Utils.java:40)
+	at cucumber.runtime.Timeout.timeout(Timeout.java:16)
+	at cucumber.runtime.Utils.invoke(Utils.java:34)
+	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:38)
+	at cucumber.runtime.StepDefinitionMatch.runStep(StepDefinitionMatch.java:37)
+	at cucumber.runtime.Runtime.runStep(Runtime.java:300)
+	at cucumber.runtime.model.StepContainer.runStep(StepContainer.java:44)
+	at cucumber.runtime.model.StepContainer.runSteps(StepContainer.java:39)
+	at cucumber.runtime.model.CucumberScenario.run(CucumberScenario.java:44)
+	at cucumber.runtime.junit.ExecutionUnitRunner.run(ExecutionUnitRunner.java:102)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.runtime.junit.ExamplesRunner.run(ExamplesRunner.java:59)
+	at org.junit.runners.Suite.runChild(Suite.java:127)
+	at org.junit.runners.Suite.runChild(Suite.java:26)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.runtime.junit.ScenarioOutlineRunner.run(ScenarioOutlineRunner.java:53)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:63)
+	at cucumber.runtime.junit.FeatureRunner.runChild(FeatureRunner.java:18)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.runtime.junit.FeatureRunner.run(FeatureRunner.java:70)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:95)
+	at cucumber.api.junit.Cucumber.runChild(Cucumber.java:38)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at cucumber.api.junit.Cucumber.run(Cucumber.java:100)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:160)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+Caused by: org.openqa.selenium.WebDriverException: Failed to decode response from marionette
+Build info: version: '4.0.0', revision: '3a21814679'
+System info: host: 'DESKTOP-T82CTNL', ip: '192.168.1.108', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_121'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [9c9eeb8e-d4bf-4e7b-adbb-ecc8fe9b7b8a, findElement {using=xpath, value=//a[contains(text(),'buy + sell')]}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 100.0.2, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20220519220738, moz:debuggerAddress: localhost:59846, moz:geckodriverVersion: 0.31.0, moz:headless: false, moz:processID: 36460, moz:profile: C:\Users\Ajit\AppData\Local..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:59846/devtoo..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 9c9eeb8e-d4bf-4e7b-adbb-ecc8fe9b7b8a
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:559)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:383)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:375)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy22.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:201)
+	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:152)
+	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:73)
+	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:82)
+	... 96 more
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>java.lang.AssertionError</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>6</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>May 27, 2022 08:19:45 AM</td>
+                                                        <td class='linked' test-id='142'>Find the dealers and verify.Find the dealers and verify the dealers are in the list.Find the dealers and verify the dealers are in the list.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page</td>
+                                                        <td><pre><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.carsguide.pages.FindDealersResultPage.verifyCarDealersPage(FindDealersResultPage.java:62)
+	at com.carsguide.steps.FindDealers.iNavigateToUrlPage(FindDealers.java:21)
+	at ✽.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page(finddealers.feature:8)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>May 27, 2022 08:19:57 AM</td>
+                                                        <td class='linked' test-id='148'>Find the dealers and verify.Find the dealers and verify the dealers are in the list.Find the dealers and verify the dealers are in the list.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page</td>
+                                                        <td><pre><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.carsguide.pages.FindDealersResultPage.verifyCarDealersPage(FindDealersResultPage.java:62)
+	at com.carsguide.steps.FindDealers.iNavigateToUrlPage(FindDealers.java:21)
+	at ✽.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page(finddealers.feature:8)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>May 27, 2022 08:20:08 AM</td>
+                                                        <td class='linked' test-id='154'>Find the dealers and verify.Find the dealers and verify the dealers are in the list.Find the dealers and verify the dealers are in the list.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page</td>
+                                                        <td><pre><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.carsguide.pages.FindDealersResultPage.verifyCarDealersPage(FindDealersResultPage.java:62)
+	at com.carsguide.steps.FindDealers.iNavigateToUrlPage(FindDealers.java:21)
+	at ✽.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page(finddealers.feature:8)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>May 27, 2022 08:20:23 AM</td>
+                                                        <td class='linked' test-id='160'>Find the dealers and verify.Find the dealers and verify the dealers are in the list.Find the dealers and verify the dealers are in the list.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page</td>
+                                                        <td><pre><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.carsguide.pages.FindDealersResultPage.verifyCarDealersPage(FindDealersResultPage.java:62)
+	at com.carsguide.steps.FindDealers.iNavigateToUrlPage(FindDealers.java:21)
+	at ✽.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page(finddealers.feature:8)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>May 27, 2022 08:20:36 AM</td>
+                                                        <td class='linked' test-id='166'>Find the dealers and verify.Find the dealers and verify the dealers are in the list.Find the dealers and verify the dealers are in the list.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page</td>
+                                                        <td><pre><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.carsguide.pages.FindDealersResultPage.verifyCarDealersPage(FindDealersResultPage.java:62)
+	at com.carsguide.steps.FindDealers.iNavigateToUrlPage(FindDealers.java:21)
+	at ✽.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page(finddealers.feature:8)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>May 27, 2022 08:20:49 AM</td>
+                                                        <td class='linked' test-id='172'>Find the dealers and verify.Find the dealers and verify the dealers are in the list.Find the dealers and verify the dealers are in the list.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page</td>
+                                                        <td><pre><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.carsguide.pages.FindDealersResultPage.verifyCarDealersPage(FindDealersResultPage.java:62)
+	at com.carsguide.steps.FindDealers.iNavigateToUrlPage(FindDealers.java:21)
+	at ✽.Then I navigate to "https://www.carsguide.com.au/car-dealers" url page(finddealers.feature:8)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -824,37 +2018,37 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Features
-					<div class='panel-lead'>1</div>
+					<div class='panel-lead'>2</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>12</div>
+					<div class='panel-lead'>18</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>120</div>
+					<div class='panel-lead'>150</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>May 21, 2022 08:43:17 AM</div>
+					<div class='panel-lead'>May 27, 2022 08:15:30 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>May 21, 2022 08:47:07 AM</div>
+			 		<div class='panel-lead'>May 27, 2022 08:20:50 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>230,569ms</div>
+					<div class='panel-lead'>320,430ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -893,6 +2087,48 @@
 					</table>
 				</div>
 			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@Smoke</td>
+							<td>5</td>
+							<td>1</td>
+							<td>0</td>
+							<td>
+									83.333%
+							</td>
+						</tr>
+						<tr>
+							<td>@Sanity</td>
+							<td>6</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@Regression</td>
+							<td>0</td>
+							<td>6</td>
+							<td>0</td>
+							<td>
+									0%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -903,31 +2139,31 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
-				failParent: 0,
+				passParent: 0,
+				failParent: 2,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 2,
 				
-				passChild: 12,
-				failChild: 0,
+				passChild: 11,
+				failChild: 7,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 0,
+				exceptionsChild: 7,
 				
-				passGrandChild: 120,
-				failGrandChild: 0,
+				passGrandChild: 129,
+				failGrandChild: 7,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 0,
+				skipGrandChild: 14,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 0,
+				exceptionsGrandChild: 21,
 			};
 		</script>
 		

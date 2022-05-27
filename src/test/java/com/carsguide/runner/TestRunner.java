@@ -15,8 +15,8 @@ import org.junit.runner.RunWith;
 
                         plugin = {"pretty", "html:target/cucumber-report/cucumber.html",
                                 "com.cucumber.listener.ExtentCucumberFormatter:target/Extent_Reports/report.html"
-                        }
-//                   tags = {"@sanity,@smoke,@regression"}
+                        },
+                   tags = {"@Sanity,@Smoke,@Regression"}
 
 
                         )

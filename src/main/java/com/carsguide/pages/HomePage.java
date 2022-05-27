@@ -28,6 +28,10 @@ public class HomePage extends Utility {
     @FindBy(xpath = "//a[normalize-space()='Used']")
     WebElement usedCar;
 
+    @CacheLookup
+    @FindBy (xpath = "//a[contains(text(),'Find a Dealer')]")
+    WebElement findDealer;
+
    public void mouseHoverOnBuySellTab()  {
         mouseHoverToElement(buySellTab);
         log.info("Mouse hover on 'Buy + Sell' Tab  " + buySellTab.toString());
@@ -41,6 +45,11 @@ public class HomePage extends Utility {
     public void clickOnUsedLink(){
         mouseHoverToElementAndClick(usedCar);
         log.info("Clicking on Search link  " + searchCars.toString());
+    }
+
+    public void clickOnFindDealer(){
+        mouseHoverToElementAndClick(findDealer);
+        log.info("Clicking on 'Find a Dealer' link   " + findDealer.toString());
     }
 
 }
